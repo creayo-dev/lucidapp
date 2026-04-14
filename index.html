@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucid</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0A0A0A;
+      color: #E8E4DE;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 48px;
+    }
+    @media (max-width: 600px) { body { padding: 48px 24px; } }
+    .container {
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 52px;
+      font-weight: normal;
+      color: #E8E4DE;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #7A7067;
+      margin-bottom: 64px;
+      letter-spacing: 0.2px;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    nav a {
+      color: #C4956A;
+      text-decoration: none;
+      font-size: 16px;
+      border-bottom: 1px solid rgba(196, 149, 106, 0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.15s;
+    }
+    nav a:hover { border-color: #C4956A; }
+    footer {
+      font-size: 13px;
+      color: #3D3730;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lucid</h1>
+    <p class="subtitle">Mental Recovery from AI</p>
+    <nav>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <footer>&copy; 2026 Creayo LLC</footer>
+  </div>
+</body>
+</html>
