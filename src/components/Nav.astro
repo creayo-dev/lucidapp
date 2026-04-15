@@ -1,0 +1,64 @@
+---
+import { site } from '../data/config';
+---
+
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--border)]">
+  <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between" aria-label="Main navigation">
+    <a href="/" class="flex items-center text-xl text-[var(--accent)]" style="font-family: Georgia, serif; font-weight: 400;" aria-label="Lucid home">
+      Lucid
+    </a>
+
+    <!-- desktop -->
+    <div class="hidden sm:flex items-center gap-6">
+      <a href="/#exercises" class="btn-ghost">Exercises</a>
+      <a href="/#pricing" class="btn-ghost">Pricing</a>
+      <a
+        href={site.appStoreUrl}
+        target="_blank"
+        rel="noopener"
+        class="btn-primary text-sm py-2 px-5"
+      >
+        Download
+      </a>
+    </div>
+
+    <!-- mobile hamburger -->
+    <button
+      class="sm:hidden p-2 -mr-2"
+      aria-label="Open menu"
+      aria-expanded="false"
+      id="menu-toggle"
+    >
+      <span class="block w-5 h-0.5 bg-[var(--text-primary)] mb-1.5 transition-transform" id="bar1"></span>
+      <span class="block w-5 h-0.5 bg-[var(--text-primary)] mb-1.5 transition-opacity" id="bar2"></span>
+      <span class="block w-5 h-0.5 bg-[var(--text-primary)] transition-transform" id="bar3"></span>
+    </button>
+  </nav>
+
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="sm:hidden hidden px-5 pb-6 pt-2 border-t border-[var(--border)] bg-[var(--bg)]">
+    <div class="flex flex-col gap-3">
+      <a href="/#exercises" class="btn-ghost justify-start">Exercises</a>
+      <a href="/#pricing" class="btn-ghost justify-start">Pricing</a>
+      <a href={site.appStoreUrl} target="_blank" rel="noopener" class="btn-primary text-sm mt-2">
+        Download
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+
+  toggle?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+    bar1!.style.transform = open ? 'rotate(45deg) translate(4px, 4px)' : '';
+    bar2!.style.opacity = open ? '0' : '1';
+    bar3!.style.transform = open ? 'rotate(-45deg) translate(4px, -4px)' : '';
+  });
+</script>

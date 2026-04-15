@@ -1,0 +1,349 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import AppStoreButton from '../components/AppStoreButton.astro';
+import Pill from '../components/Pill.astro';
+import { site } from '../data/config';
+---
+
+<PageLayout title={site.name} description={site.description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-20 pb-24 px-5">
+    <!-- Background glow -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-[0.04]"
+        style="background: radial-gradient(ellipse, #C4956A 0%, transparent 70%);">
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <!-- Left: copy -->
+        <div class="max-w-xl">
+          <Pill variant="accent" class="mb-6">30 exercises. 5 types. One score.</Pill>
+          <h1 class="text-5xl sm:text-6xl leading-tight mb-6 text-[var(--text-primary)]">
+            Your brain on AI...<br/>
+            <span class="text-[var(--accent)]">isn't what it was.</span>
+          </h1>
+          <p class="text-lg text-[var(--text-secondary)] mb-8 leading-relaxed max-w-lg">
+            You paste questions instead of thinking them through. You let autocomplete finish your thoughts. Lucid is 5 minutes of going the other direction.
+          </p>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <AppStoreButton />
+            <p class="text-sm text-[var(--text-tertiary)]">Free to try. 7 exercises a day.</p>
+          </div>
+        </div>
+
+        <!-- Right: phone screenshot -->
+        <div class="flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute inset-0 rounded-[2.5rem] opacity-20 blur-2xl"
+              style="background: radial-gradient(ellipse, #C4956A 0%, transparent 60%);" aria-hidden="true">
+            </div>
+            <div class="relative w-[260px] sm:w-[300px] rounded-[2.5rem] overflow-hidden border border-[var(--border)]"
+              style="box-shadow: 0 40px 80px rgba(0,0,0,0.6);">
+              <img
+                src="/screenshots/screen1_feed.png"
+                alt="Lucid app showing the exercise feed"
+                width="300"
+                height="650"
+                fetchpriority="high"
+                decoding="async"
+                class="w-full h-auto block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem statement -->
+  <section class="border-t border-[var(--border)] py-24 px-5">
+    <div class="max-w-3xl mx-auto reveal">
+      <h2 class="text-3xl sm:text-4xl mb-6 text-[var(--text-primary)]">
+        You already know it's happening.
+      </h2>
+      <div class="space-y-4 text-[var(--text-secondary)] text-lg leading-relaxed">
+        <p>You search for things you used to know. You reach for AI before trying yourself. The ability to hold an idea in your head and work through it — that gets weaker when you don't use it.</p>
+        <p>Every neurologist who studies this says the same thing: the pathway only exists if you use it. Lucid exists because someone built an AI assistant app and then noticed his own thinking getting worse.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 1: Feed -->
+  <section class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Screenshot left -->
+        <div class="flex justify-center order-2 lg:order-1 reveal">
+          <div class="relative w-[240px] sm:w-[280px] rounded-[2.5rem] overflow-hidden border border-[var(--border)]"
+            style="box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+            <img
+              src="/screenshots/screen1_feed.png"
+              alt="Lucid exercise feed showing varied card types"
+              width="280"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto block"
+            />
+          </div>
+        </div>
+
+        <!-- Text right -->
+        <div class="order-1 lg:order-2 reveal">
+          <h2 class="text-3xl sm:text-4xl mb-5 text-[var(--text-primary)]">
+            A feed of exercises,<br/>not a feed of content
+          </h2>
+          <div class="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+            <p>Every card in the feed is a short cognitive challenge — anagram solving, word recall, pattern recognition, logic puzzles, creative writing prompts, spatial reasoning. 30 different types, sequenced so your brain can't fall into a pattern.</p>
+            <p>Sessions take 4-6 minutes. The variety is the point. You can't get good at one thing and call it done.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2: Autonomy Score -->
+  <section class="py-24 px-5 bg-[var(--card-bg)]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text left -->
+        <div class="reveal">
+          <h2 class="text-3xl sm:text-4xl mb-5 text-[var(--text-primary)]">
+            Your Autonomy Score
+          </h2>
+          <div class="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+            <p>It's a number between 0 and 100 that tracks your raw cognitive performance across 5 domains: word recall, spatial reasoning, logic, creativity, and pattern recognition. Not how long you've used the app. Not your streak count. Actual performance.</p>
+            <p>The average new user scores 67. Most users gain 8-12 points in their first 30 days. When the number moves, it's because your brain moved.</p>
+          </div>
+        </div>
+
+        <!-- Screenshot right -->
+        <div class="flex justify-center lg:justify-end reveal">
+          <div class="relative w-[240px] sm:w-[280px] rounded-[2.5rem] overflow-hidden border border-[var(--border)]"
+            style="box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+            <img
+              src="/screenshots/screen2_score.png"
+              alt="Lucid Autonomy Score tracking screen"
+              width="280"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto block"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: 30 card types -->
+  <section class="py-24 px-5">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Screenshot left -->
+        <div class="flex justify-center order-2 lg:order-1 reveal">
+          <div class="relative w-[240px] sm:w-[280px] rounded-[2.5rem] overflow-hidden border border-[var(--border)]"
+            style="box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+            <img
+              src="/screenshots/screen3_cards.png"
+              alt="Lucid showing multiple exercise card types"
+              width="280"
+              height="600"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto block"
+            />
+          </div>
+        </div>
+
+        <!-- Text right -->
+        <div class="order-1 lg:order-2 reveal">
+          <h2 class="text-3xl sm:text-4xl mb-5 text-[var(--text-primary)]">
+            30 card types.<br/>Nothing repeats.
+          </h2>
+          <div class="space-y-4 text-[var(--text-secondary)] leading-relaxed">
+            <p>Word anagrams. Memory sequences. Odd-one-out. Creative constraints. Analogical reasoning. Math from first principles. Visual pattern matching. Directional spatial challenges.</p>
+            <p>Each exercise type targets a different cognitive pathway. The feed algorithm weights toward your weakest areas so you're always working the muscles that need it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-20 px-5 border-t border-b border-[var(--border)]">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <div class="grid grid-cols-3 gap-8">
+        <div>
+          <p class="text-5xl sm:text-6xl text-[var(--accent)] mb-2" style="font-family: Georgia, serif;">30</p>
+          <p class="text-sm text-[var(--text-secondary)]">Different exercise types</p>
+        </div>
+        <div>
+          <p class="text-5xl sm:text-6xl text-[var(--accent)] mb-2" style="font-family: Georgia, serif;">5 min</p>
+          <p class="text-sm text-[var(--text-secondary)]">Average session</p>
+        </div>
+        <div>
+          <p class="text-4xl sm:text-5xl text-[var(--accent)] mb-2 leading-tight" style="font-family: Georgia, serif;">8–12 pts</p>
+          <p class="text-sm text-[var(--text-secondary)]">Average Autonomy Score gain in 30 days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exercise types grid -->
+  <section class="py-24 px-5" id="exercises">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <h2 class="text-3xl sm:text-4xl mb-4 text-[var(--text-primary)]">5 types of thinking.</h2>
+        <p class="text-[var(--text-secondary)] max-w-lg mx-auto">Each one targets a distinct cognitive pathway. Together they cover the full range of what your brain does when it works independently.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Card 1 -->
+        <div class="card reveal">
+          <div class="w-8 h-8 rounded-lg mb-4 flex items-center justify-center text-[var(--accent)] text-xl" style="background: var(--accent-glow);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-[var(--text-primary)] mb-2" style="font-family: inherit;">Word & Language</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Anagram solving, word recall, vocabulary building, creative writing under constraints.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card reveal">
+          <div class="w-8 h-8 rounded-lg mb-4 flex items-center justify-center text-[var(--accent)] text-xl" style="background: var(--accent-glow);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-[var(--text-primary)] mb-2" style="font-family: inherit;">Logic & Reasoning</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Syllogisms, sequence completion, deductive puzzles. Holding multiple conditions in mind at once.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card reveal">
+          <div class="w-8 h-8 rounded-lg mb-4 flex items-center justify-center text-[var(--accent)] text-xl" style="background: var(--accent-glow);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-[var(--text-primary)] mb-2" style="font-family: inherit;">Spatial & Visual</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Pattern rotation, mirror symmetry, shape matching. The kind of thinking GPS has replaced.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card reveal">
+          <div class="w-8 h-8 rounded-lg mb-4 flex items-center justify-center text-[var(--accent)] text-xl" style="background: var(--accent-glow);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-[var(--text-primary)] mb-2" style="font-family: inherit;">Memory</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Sequence recall, detail retention, working memory span. Short-term storage you haven't been using.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card reveal">
+          <div class="w-8 h-8 rounded-lg mb-4 flex items-center justify-center text-[var(--accent)] text-xl" style="background: var(--accent-glow);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-[var(--text-primary)] mb-2" style="font-family: inherit;">Creative</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Open prompts, unconventional uses, metaphor generation. Divergent thinking is a skill too.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card reveal">
+          <div class="w-8 h-8 rounded-lg mb-4 flex items-center justify-center text-[var(--accent)] text-xl" style="background: var(--accent-glow);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="text-base font-semibold text-[var(--text-primary)] mb-2" style="font-family: inherit;">Attention</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Odd-one-out, selective focus, distraction filtering. The thing notifications have been destroying.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-24 px-5" id="pricing">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <h2 class="text-3xl sm:text-4xl mb-3 text-[var(--text-primary)]">Free to start.</h2>
+        <p class="text-[var(--text-secondary)] text-lg">7 exercises every day, free. No account required.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5 reveal">
+        <!-- Free tier -->
+        <div class="card flex flex-col">
+          <div class="mb-6">
+            <h3 class="text-xl text-[var(--text-primary)] mb-1" style="font-family: Georgia, serif;">Free</h3>
+            <p class="text-3xl font-semibold text-[var(--text-primary)]">$0</p>
+          </div>
+          <ul class="space-y-3 flex-1 mb-8">
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              7 exercises per day
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Autonomy Score tracking
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              6 exercise types
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              No account needed
+            </li>
+          </ul>
+          <AppStoreButton class="w-fit" size="small" />
+        </div>
+
+        <!-- Unlimited tier -->
+        <div class="relative card flex flex-col border-[var(--accent)]/30">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+            <Pill variant="accent" class="text-xs py-1 px-3">Best Value</Pill>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-xl text-[var(--text-primary)] mb-1" style="font-family: Georgia, serif;">Unlimited</h3>
+            <div class="flex items-baseline gap-2">
+              <p class="text-3xl font-semibold text-[var(--text-primary)]">$59.99<span class="text-base font-normal text-[var(--text-secondary)]">/year</span></p>
+            </div>
+            <p class="text-xs text-[var(--text-tertiary)] mt-1">or $2.99/week</p>
+          </div>
+          <ul class="space-y-3 flex-1 mb-8">
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited exercises
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              All 30 card types
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Full analytics
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Progress trends
+            </li>
+            <li class="flex items-start gap-3 text-sm text-[var(--text-secondary)]">
+              <svg class="mt-0.5 shrink-0 text-[var(--accent)]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              7-day free trial
+            </li>
+          </ul>
+          <AppStoreButton class="w-fit" size="small" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-24 px-5 border-t border-[var(--border)]">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <h2 class="text-4xl sm:text-5xl mb-5 text-[var(--text-primary)]">
+        5 minutes of actual thinking.
+      </h2>
+      <p class="text-lg text-[var(--text-secondary)] mb-8">
+        AI isn't going away. But you don't have to let it think for you.
+      </p>
+      <AppStoreButton />
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,55 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../data/config';
+---
+
+<PageLayout title="Support" description="Lucid support. Get help, report bugs, or cancel your subscription.">
+  <section class="max-w-3xl mx-auto px-5 py-20">
+    <h1 class="text-4xl mb-4">Support</h1>
+    <p class="text-[var(--text-secondary)] text-lg mb-3">
+      Email us at <a href="mailto:support@lucidapp.co" class="text-[var(--accent)] hover:underline">support@lucidapp.co</a>.
+    </p>
+    <p class="text-[var(--text-tertiary)] mb-16">We reply within 24 hours.</p>
+
+    <h2 class="text-2xl text-[var(--text-primary)] mb-8">Common questions</h2>
+
+    <div class="space-y-8">
+
+      <div class="border-b border-[var(--border)] pb-8">
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">How do I cancel my subscription?</h3>
+        <p class="text-[var(--text-secondary)]">Go to iOS Settings → [Your Name] → Subscriptions → Lucid → Cancel Subscription. Apple handles all billing — we can't cancel it for you, but they can.</p>
+      </div>
+
+      <div class="border-b border-[var(--border)] pb-8">
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">What is the Autonomy Score?</h3>
+        <p class="text-[var(--text-secondary)]">It's a number between 0 and 100 that tracks your raw cognitive performance across 5 domains: word recall, spatial reasoning, logic, creativity, and pattern recognition. It's based on your actual exercise results — accuracy, speed, quality of responses — not how many days you've used the app. Most users improve 8–12 points in their first 30 days.</p>
+      </div>
+
+      <div class="border-b border-[var(--border)] pb-8">
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">I never got a notification. How do I turn them on?</h3>
+        <p class="text-[var(--text-secondary)]">Open Lucid → tap the gear icon → Enable Notifications. Or go to iOS Settings → Lucid → Notifications and turn them on there.</p>
+      </div>
+
+      <div class="border-b border-[var(--border)] pb-8">
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">Is my data private?</h3>
+        <p class="text-[var(--text-secondary)]">Yes. Your exercise data is stored under a randomly generated device ID — no name, email, or account required. We don't sell data or use it for ads. See the <a href="/privacy" class="text-[var(--accent)] hover:underline">Privacy Policy</a> for details.</p>
+      </div>
+
+      <div class="border-b border-[var(--border)] pb-8">
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">My subscription isn't showing as active. What do I do?</h3>
+        <p class="text-[var(--text-secondary)]">Open Lucid → Settings → Restore Purchases. If that doesn't work, make sure you're signed into the same Apple ID you used to purchase. Still not working? Email us.</p>
+      </div>
+
+      <div class="border-b border-[var(--border)] pb-8">
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">How many exercises do I get for free?</h3>
+        <p class="text-[var(--text-secondary)]">7 exercises per day, free forever. No credit card required. The paywall appears after your 7th exercise each day. Your free count resets at midnight.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg text-[var(--text-primary)] mb-2">I found a bug. How do I report it?</h3>
+        <p class="text-[var(--text-secondary)]">Email <a href="mailto:support@lucidapp.co" class="text-[var(--accent)] hover:underline">support@lucidapp.co</a> with what happened, what you expected, and your iOS version. Screenshots help.</p>
+      </div>
+
+    </div>
+  </section>
+</PageLayout>

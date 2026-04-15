@@ -1,0 +1,61 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../data/config';
+---
+
+<PageLayout title="Privacy Policy" description="Lucid privacy policy. What data we collect, how we use it, and how to contact us.">
+  <section class="max-w-3xl mx-auto px-5 py-20">
+    <h1 class="text-4xl mb-3">Privacy Policy</h1>
+    <p class="text-[var(--text-tertiary)] mb-12">Last updated: April 2026</p>
+
+    <div class="space-y-10 text-[var(--text-secondary)] leading-relaxed">
+
+      <div>
+        <h2 class="text-xl text-[var(--text-primary)] mb-3">What we collect</h2>
+        <p>Lucid collects the following data to run the app:</p>
+        <ul class="mt-3 space-y-2 list-disc list-inside">
+          <li>Exercise results (accuracy, response time, completion)</li>
+          <li>Autonomy Score and domain scores over time</li>
+          <li>Session duration and frequency</li>
+          <li>A randomly generated device ID (no name, email, or account required)</li>
+          <li>Subscription status (active/inactive, product ID, expiration)</li>
+        </ul>
+        <p class="mt-3">We do not collect your name, email address, location, contacts, or any identifying information. The app works without an account.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl text-[var(--text-primary)] mb-3">How we use it</h2>
+        <p>Exercise data is used to calculate your Autonomy Score and show your progress over time. Session data is used to improve the exercise algorithm and identify card types users find most useful. Subscription status is used to determine whether to show the paywall.</p>
+        <p class="mt-3">We don't use your data for advertising. We don't sell it. We don't share it with third parties except as described below.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl text-[var(--text-primary)] mb-3">Third-party services</h2>
+        <ul class="space-y-3">
+          <li><strong class="text-[var(--text-primary)]">Supabase</strong> — stores exercise sessions and scores in a private database. Your data is associated with your device ID only. <a href="https://supabase.com/privacy" class="text-[var(--accent)] hover:underline">Supabase Privacy Policy</a>.</li>
+          <li><strong class="text-[var(--text-primary)]">TelemetryDeck</strong> — privacy-first analytics. All signals are hashed and anonymous. No IP addresses stored. <a href="https://telemetrydeck.com/privacy" class="text-[var(--accent)] hover:underline">TelemetryDeck Privacy Policy</a>.</li>
+          <li><strong class="text-[var(--text-primary)]">Apple StoreKit</strong> — handles all subscription transactions. We don't see or store your payment information.</li>
+          <li><strong class="text-[var(--text-primary)]">Art Institute of Chicago API</strong> — public domain artwork used in some card types. No data sent.</li>
+          <li><strong class="text-[var(--text-primary)]">Open Trivia Database</strong> — publicly available trivia questions. No data sent.</li>
+          <li><strong class="text-[var(--text-primary)]">Pexels</strong> — free stock photos used in some exercises. No data sent.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl text-[var(--text-primary)] mb-3">Data retention</h2>
+        <p>Your exercise data is retained as long as you use the app. If you delete the app, your local data is removed immediately. Server-side data (exercise history, scores) associated with your device ID can be deleted by contacting us.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl text-[var(--text-primary)] mb-3">Children</h2>
+        <p>Lucid is not directed at children under 13. We don't knowingly collect data from anyone under 13.</p>
+      </div>
+
+      <div>
+        <h2 class="text-xl text-[var(--text-primary)] mb-3">Contact</h2>
+        <p>Questions about this policy or requests to delete your data: <a href="mailto:privacy@lucidapp.co" class="text-[var(--accent)] hover:underline">privacy@lucidapp.co</a></p>
+      </div>
+
+    </div>
+  </section>
+</PageLayout>

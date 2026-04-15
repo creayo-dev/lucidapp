@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+  variant?: 'accent' | 'muted';
+}
+
+const { class: className = '', variant = 'muted' } = Astro.props;
+
+const variants = {
+  accent: 'bg-[var(--accent-glow)] text-[var(--accent)]',
+  muted: 'bg-white/5 text-[var(--text-secondary)]',
+};
+---
+
+<span class:list={['pill', variants[variant], className]}>
+  <slot />
+</span>
