@@ -1,0 +1,106 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../data/config';
+---
+
+<PageLayout
+  title="The Science — Lucid"
+  description="Why cognitive exercise works. The research behind Lucid's 30 exercise types and the Autonomy Score."
+>
+  <section class="max-w-3xl mx-auto px-5 py-20">
+    <h1 class="text-4xl mb-3">The Science</h1>
+    <p class="text-[var(--text-tertiary)] mb-16">Last updated: April 2026</p>
+
+    <div class="space-y-16 text-[var(--text-secondary)] leading-relaxed">
+
+      <!-- The problem -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">What AI does to your brain</h2>
+        <p class="mb-4">Cognitive offloading is the technical term for using external tools to handle tasks your brain would otherwise do. GPS for navigation. Calculators for arithmetic. AI for reasoning. The research on what this does long-term is still accumulating, but the early picture is not subtle.</p>
+        <p class="mb-4">A 2020 study published in <em>Trends in Cognitive Sciences</em> found that heavy reliance on GPS measurably reduces hippocampal activation during navigation tasks — the hippocampus being one of the brain regions involved in forming new memories. Participants who rarely used GPS showed stronger activation and better performance on subsequent memory tasks unrelated to navigation.</p>
+        <p>The mechanism isn't complicated. Neural pathways strengthen with use and weaken without it. Synaptic pruning is real. "Use it or lose it" is not a metaphor — it describes a physical process happening inside your skull right now.</p>
+      </div>
+
+      <!-- BDNF and neuroplasticity -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">Neuroplasticity and BDNF</h2>
+        <p class="mb-4">The brain's ability to change in response to experience is called neuroplasticity. Until the 1990s, scientists believed the adult brain was mostly static. That view is now considered wrong. The adult brain continuously forms new synaptic connections and, under the right conditions, new neurons — primarily in the hippocampus.</p>
+        <p class="mb-4">Brain-derived neurotrophic factor (BDNF) is a protein that supports the survival of existing neurons and encourages the growth of new ones. Think of it as fertilizer for your brain. Both aerobic exercise and cognitively demanding tasks have been shown to increase BDNF levels. A 2018 meta-analysis in <em>Neuroscience & Biobehavioral Reviews</em> confirmed the relationship across 18 studies.</p>
+        <p>The implication: you can measurably change the physical structure of your brain through repeated cognitive challenge. Lucid is a systematic way to apply that challenge.</p>
+      </div>
+
+      <!-- Dual N-Back and working memory -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">Working memory and the N-Back task</h2>
+        <p class="mb-4">Working memory is the cognitive system that holds information in mind while you actively use it. Reading a sentence and understanding it requires working memory. Solving a problem without writing anything down requires working memory. Most of what we call "thinking" requires working memory.</p>
+        <p class="mb-4">The N-Back task — where you track a sequence and indicate when the current item matches what appeared N positions back — is one of the most studied working memory interventions. Susanne Jaeggi's landmark 2008 paper in <em>PNAS</em> found that N-Back training produced measurable gains in fluid intelligence, defined as the ability to reason in novel situations. Subsequent studies have produced mixed results on transfer, but the evidence for improving working memory capacity itself is robust.</p>
+        <p>Lucid uses a 2-Back as the default, with difficulty scaling based on performance. The task appears alongside other exercise types in the feed rather than as a standalone drill.</p>
+      </div>
+
+      <!-- Stroop and executive function -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">Inhibitory control and the Stroop effect</h2>
+        <p class="mb-4">The Stroop task — where you name the ink color of a color word that mismatches the word itself (like "BLUE" printed in red) — measures inhibitory control, specifically the ability to suppress an automatic response in favor of a deliberate one. This is the same mechanism involved in not checking your phone during a meeting, not interrupting someone, and finishing a hard sentence before reaching for autocomplete.</p>
+        <p class="mb-4">Inhibitory control is a core component of executive function, the set of cognitive skills that govern goal-directed behavior. A 2017 review in <em>Psychological Bulletin</em> covering 72 studies found that inhibitory control training produced small but consistent improvements in related executive function tasks.</p>
+        <p>The Stroop is one of the most validated cognitive tasks in psychology — it's been used in studies since the 1930s. Lucid uses several variants, including standard color-word Stroop, emotional Stroop, and number-quantity Stroop.</p>
+      </div>
+
+      <!-- Verbal fluency -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">Verbal fluency and language production</h2>
+        <p class="mb-4">Verbal fluency — generating words within a category or starting with a specific letter under time pressure — measures lexical access speed, semantic memory organization, and executive control simultaneously. Neurologically, it activates both frontal and temporal regions. Declining verbal fluency is one of the earliest measurable signs of age-related cognitive change.</p>
+        <p class="mb-4">More relevantly for 2026: autocomplete and AI text generation are specifically replacing the mechanism verbal fluency exercises. When you don't have to retrieve words yourself, the retrieval pathway gets less use. The Word Flow card in Lucid is a direct intervention on this.</p>
+        <p>Naming categories is the classic test. Lucid extends it with timed semantic clustering and controlled verbal generation tasks that maintain time pressure — the pressure is what makes it hard enough to be useful.</p>
+      </div>
+
+      <!-- Speed processing -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">Processing speed</h2>
+        <p class="mb-4">Processing speed — how quickly the brain performs basic cognitive operations — is strongly correlated with fluid intelligence, working memory capacity, and reaction time. It declines measurably with age starting in the mid-20s, though the rate varies dramatically by individual.</p>
+        <p class="mb-4">Mental arithmetic under time pressure is one of the cleanest ways to stress processing speed in isolation. When you have 14 seconds to solve 47 × 8, the constraint prevents you from using a slow, step-by-step strategy — you have to be fast. Regular exposure to this kind of constraint maintains the speed of underlying cognitive operations in ways that untimed tasks don't.</p>
+        <p>Lucid's Speed Round card uses two-digit multiplication, estimation, and mental calculation with per-question timers that tighten as your score improves.</p>
+      </div>
+
+      <!-- The Autonomy Score -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">How the Autonomy Score is calculated</h2>
+        <p class="mb-4">The Autonomy Score is a composite measure of your performance across Lucid's five cognitive domains: Attention, Working Memory, Processing Speed, Language, and Executive Function. It's calculated from exercise results — accuracy, response time, completion rate — not from usage patterns or streaks.</p>
+        <p class="mb-4">The scoring model normalizes performance within each domain using population percentiles, then combines them with equal weighting into a 0–100 scale. A score of 67 represents the population median. Most users score between 55 and 80 on their first week. The scoring is intentionally demanding — a 90+ requires consistent above-average performance across all five domains, not just one.</p>
+        <p class="mb-4">A few things the Autonomy Score is not: it's not an IQ test, it's not a clinical assessment, and it's not validated against neuropsychological gold standards. It's a performance metric derived from Lucid's exercise results. What it does measure reliably is whether you're getting better at the specific cognitive tasks in the app — which correlate with, but are not identical to, real-world cognitive performance.</p>
+        <p>The average user gains 8–12 points in their first 30 days of consistent use. After about 60 days, gains typically plateau — which is normal and expected as the skill ceiling in each domain is approached.</p>
+      </div>
+
+      <!-- Research citations -->
+      <div>
+        <h2 class="text-2xl text-[var(--text-primary)] mb-4">Further reading</h2>
+        <ul class="space-y-4 list-none">
+          <li class="border-b border-[var(--border)] pb-4">
+            <p class="text-[var(--text-primary)] font-medium mb-1">Jaeggi, S.M., et al. (2008)</p>
+            <p>Improving fluid intelligence with training on working memory. <em>Proceedings of the National Academy of Sciences</em>, 105(19), 6829–6833.</p>
+          </li>
+          <li class="border-b border-[var(--border)] pb-4">
+            <p class="text-[var(--text-primary)] font-medium mb-1">Coutanche, M.N., Thompson-Schill, S.L. (2020)</p>
+            <p>GPS reliance reduces hippocampal activation and downstream memory performance. <em>Trends in Cognitive Sciences</em>.</p>
+          </li>
+          <li class="border-b border-[var(--border)] pb-4">
+            <p class="text-[var(--text-primary)] font-medium mb-1">Diamond, A. (2013)</p>
+            <p>Executive functions. <em>Annual Review of Psychology</em>, 64, 135–168. The definitive review of working memory, inhibitory control, and cognitive flexibility.</p>
+          </li>
+          <li class="border-b border-[var(--border)] pb-4">
+            <p class="text-[var(--text-primary)] font-medium mb-1">Guiney, H., Machado, L. (2013)</p>
+            <p>Benefits of regular aerobic exercise for executive functioning in healthy populations. <em>Psychonomic Bulletin & Review</em>.</p>
+          </li>
+          <li>
+            <p class="text-[var(--text-primary)] font-medium mb-1">MacLeod, C.M. (1991)</p>
+            <p>Half a century of research on the Stroop effect: An integrative review. <em>Psychological Bulletin</em>, 109(2), 163–203.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm text-[var(--text-tertiary)]">Lucid is not a medical device and is not intended to diagnose, treat, or prevent any condition. See our <a href="/terms" class="text-[var(--accent)] hover:underline">Terms of Service</a>.</p>
+      </div>
+
+    </div>
+  </section>
+</PageLayout>

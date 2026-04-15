@@ -1,0 +1,181 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../data/config';
+
+const domains = [
+  {
+    name: 'Attention',
+    color: '#4A8AC4',
+    description: 'Selective focus, inhibitory control, and resistance to distraction.',
+    exercises: [
+      {
+        name: 'Stroop',
+        tagline: 'Name the ink color, not the word.',
+        detail: 'The word "PURPLE" appears in blue ink. Your job is the ink. Your brain wants to read the word. Fighting that impulse is the exercise. The Stroop task is one of the most replicated experiments in cognitive psychology and measures inhibitory control with precision.',
+      },
+      {
+        name: 'Go / No-Go',
+        tagline: 'React to some things. Ignore others.',
+        detail: 'Shapes appear on screen. Tap circles. Ignore squares — or tap red, ignore blue. The rule changes. The speed increases. This is the same basic mechanism behind not checking your phone during a conversation.',
+      },
+      {
+        name: 'Flanker',
+        tagline: 'Focus on the center. Ignore the noise.',
+        detail: 'A row of arrows appears. The outer arrows point one way. The center arrow might point another. Your answer is only about the center. Flanker interference is a measure of how well attention can be selectively allocated under conflicting information.',
+      },
+    ],
+  },
+  {
+    name: 'Working Memory',
+    color: '#8B68C0',
+    description: 'Holding information in mind while actively using it.',
+    exercises: [
+      {
+        name: 'N-Back',
+        tagline: 'Does this match what appeared N steps ago?',
+        detail: 'A grid lights up in a sequence. After N positions, you indicate whether the current position matches the one N steps back. Starts at 2-Back. Gets harder. Working memory training via N-Back is the most studied cognitive intervention for fluid intelligence.',
+      },
+      {
+        name: 'Paired Associates',
+        tagline: 'Remember which word goes with which image.',
+        detail: 'Pairs of words and images appear. Then only one half of each pair appears. Your job is to recall the partner. This mirrors the kind of associative memory used for names, facts, and context — the kind that gets tested hardest as we age.',
+      },
+      {
+        name: 'Sequence Memory',
+        tagline: 'Watch the sequence. Repeat it back.',
+        detail: 'A sequence of positions or colors appears. Then you reproduce it. Length increases with each correct round. This is working memory span in its most direct form — pure capacity testing without interference.',
+      },
+    ],
+  },
+  {
+    name: 'Processing Speed',
+    color: '#D46840',
+    description: 'How fast the brain performs basic operations under time pressure.',
+    exercises: [
+      {
+        name: 'Mental Math',
+        tagline: 'Solve it in your head. Clock\'s running.',
+        detail: 'Two-digit multiplication, division, estimation. A timer starts the moment the problem appears. The constraint is the point — slow arithmetic is a different skill than fast arithmetic. Speed training generalizes to faster information processing across domains.',
+      },
+      {
+        name: 'Symbol Digit',
+        tagline: 'Decode the key. Fill in the blanks.',
+        detail: 'A key shows which digit maps to which symbol. Then a row of symbols appears. You fill in the digits as fast as possible. The Symbol Digit Modalities Test (SDMT) is used clinically to detect processing speed deficits and is sensitive enough to track recovery from traumatic brain injury.',
+      },
+      {
+        name: 'Visual Speed',
+        tagline: 'Find it before it disappears.',
+        detail: 'Targets appear on screen for fractions of a second. You\'re looking for a specific shape, color, or combination. Reaction time and accuracy under brief exposure. Processing speed in its most basic form.',
+      },
+    ],
+  },
+  {
+    name: 'Language',
+    color: '#52A06E',
+    description: 'Word retrieval, verbal fluency, and lexical access.',
+    exercises: [
+      {
+        name: 'Word Flow',
+        tagline: 'Name as many as you can. 60 seconds.',
+        detail: 'A category appears — animals, things that are cold, words that start with R. You type as many valid responses as possible before time runs out. Verbal fluency under time pressure is one of the earliest measurable signs of cognitive decline and one of the most AI-disrupted skills.',
+      },
+      {
+        name: 'Anagram',
+        tagline: 'Unscramble the letters.',
+        detail: 'A word has been shuffled. You reconstruct it. Anagram solving requires both lexical retrieval and working memory — you\'re mentally generating possibilities while holding the letters in mind. Most people discover within a few sessions that they\'re worse at this than they expected.',
+      },
+      {
+        name: 'Vocabulary in Context',
+        tagline: 'What does this word mean here?',
+        detail: 'A sentence with an underlined word. Four definitions. One is correct in context, one is the correct definition in a different context, and two are plausible fakes. Context-dependent word knowledge tests the depth of vocabulary, not just its breadth.',
+      },
+    ],
+  },
+  {
+    name: 'Executive Function',
+    color: '#4A8AC4',
+    description: 'Planning, cognitive flexibility, and goal-directed behavior.',
+    exercises: [
+      {
+        name: 'Task Switch',
+        tagline: 'The rules just changed.',
+        detail: 'You\'re classifying items by one rule. Then the rule changes. Then it changes back. Switch costs — the slowdown when transitioning between rules — measure cognitive flexibility. The ability to disengage from one strategy and adopt another is central to planning and problem-solving.',
+      },
+      {
+        name: 'Dual Task',
+        tagline: 'Do two things at once.',
+        detail: 'Track a visual target while also responding to auditory cues. Or solve simple math while remembering a sequence. Divided attention exercises stress executive function by requiring simultaneous management of competing cognitive demands.',
+      },
+      {
+        name: 'Beat Match',
+        tagline: 'Hear the pattern. Tap it back.',
+        detail: 'A rhythm pattern plays. Then you reproduce it by tapping. Temporal pattern learning requires working memory and precise motor coordination under cognitive load. It\'s different enough from the other exercise types that it reliably activates pathways the others don\'t reach.',
+      },
+    ],
+  },
+];
+---
+
+<PageLayout
+  title="Exercises — Lucid"
+  description="The 30 cognitive exercises in Lucid. What they measure, how they work, and why they're in the app."
+>
+  <section class="max-w-4xl mx-auto px-5 py-20">
+    <h1 class="text-4xl mb-4">Exercises</h1>
+    <p class="text-[var(--text-secondary)] text-lg mb-3 max-w-2xl">
+      30 different card types across 5 cognitive domains. Each one targets a specific mechanism. None of them are filler.
+    </p>
+    <p class="text-[var(--text-tertiary)] mb-16">
+      Free users get access to 6 core types. Premium unlocks all 30.
+    </p>
+
+    <div class="space-y-20">
+      {domains.map((domain) => (
+        <div>
+          <!-- Domain header -->
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-2 h-8 rounded-full" style={`background: ${domain.color};`}></div>
+            <div>
+              <h2 class="text-2xl text-[var(--text-primary)]">{domain.name}</h2>
+              <p class="text-[var(--text-tertiary)] text-sm mt-0.5">{domain.description}</p>
+            </div>
+          </div>
+
+          <!-- Exercises in this domain -->
+          <div class="space-y-6 pl-5">
+            {domain.exercises.map((ex) => (
+              <div class="border-b border-[var(--border)] pb-6 last:border-0">
+                <div class="flex items-start gap-4">
+                  <div class="w-1.5 h-1.5 rounded-full mt-2.5 flex-shrink-0" style={`background: ${domain.color};`}></div>
+                  <div>
+                    <h3 class="text-lg text-[var(--text-primary)] mb-1">{ex.name}</h3>
+                    <p class="text-[var(--text-tertiary)] text-sm mb-3 italic">{ex.tagline}</p>
+                    <p class="text-[var(--text-secondary)] leading-relaxed">{ex.detail}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional card types note -->
+    <div class="mt-16 border border-[var(--border)] rounded-2xl p-8 bg-[var(--surface)]">
+      <h3 class="text-lg text-[var(--text-primary)] mb-3">The remaining 15</h3>
+      <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
+        The exercises above account for 15 of the 30 types. The rest include creative writing prompts, image description tasks, number sequences, confidence calibration exercises, ballpark estimation challenges, long-form writing under constraints, spelling with audio, mental rotation in 3D, and more.
+      </p>
+      <p class="text-[var(--text-secondary)] leading-relaxed">
+        The full set was designed so that no two consecutive cards in the feed require the same cognitive mechanism. The variety is the point.
+      </p>
+    </div>
+
+    <!-- Science link -->
+    <div class="mt-8 text-center">
+      <p class="text-[var(--text-tertiary)] text-sm">
+        For the research behind these exercises, see <a href="/science" class="text-[var(--accent)] hover:underline">The Science</a>.
+      </p>
+    </div>
+  </section>
+</PageLayout>
